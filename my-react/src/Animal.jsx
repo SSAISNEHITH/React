@@ -1,20 +1,51 @@
-import App from "./App.jsx"
-function animal(){
-return(
+function Hello(){
+    return(
+        <h1>Hello </h1>
+    );
+}
+function Galaxy(props){
+    return(
+        <div style={{
+            textAlign:"left"
+        }}>
+        <h1>Name : {props.name}</h1>
+        <h4>Process : {props.process}</h4>
+        </div>
+    );
+}
+function Star(){
+    return(
+        <>
+        <Galaxy name="sun" 
+        process="Nuclear Fission and Fusion"></Galaxy>
+
+        </>
+    );
+}
+function Animal(){
+    return(
     <>
-<h1>Animal Function</h1>  
-<div style={{display:"flex",gap:"20px"}}>
-    <p>
-        style={{textAlign:"justify"}}
+    <h1>Animals</h1>
+    <h3>wild Animals</h3>
+    <div style={{display:"flex",gap:"20px"}}>
+        <img style={{width:"500px", height:"200px" ,margin:"30px 0px 0px 0px"}} 
+        src="https://th.bing.com/th/id/OIP.FrZAakDbMcEsNcAajyukpQHaEJ?w=295&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.jpg" alt="animal" /> 
+        <p>
+            Wild animals are undomesticated creatures that live freely in natural habitats, 
+            playing vital roles in ecosystems and biodiversity.
+        <b>Definition and Characteristics</b>
         Wild animals are species that live independently of humans,
         surviving by finding their own food, shelter, and mates in nature. 
         They include mammals, birds, reptiles, amphibians, fish, and insects, as well as uncultivated plants that grow in the wild 
         Unlike domesticated animals, wild animals are not bred or cared for by humans, 
-        although some have adapted to urban environments, such as
+        although some have adapted to urban environments, such as feral cats, dogs, mice, and rats
     </p>
-</div>
-<App></App>
+    </div>
+    <Galaxy></Galaxy>
+    <Hello></Hello>
+    <Star></Star>
     </>
-);
+        
+    );
 }
-export default animal;
+export default Animal;
