@@ -8,6 +8,8 @@ function Event() {
     alert(`Welcome ${name}`);
   };
 
+
+  
   return (
     <form onSubmit={cooking}>
       <label>Name</label>
