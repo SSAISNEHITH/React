@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'   
+import Application from './Application.jsx'
 import Event from './Event.jsx' 
 import Tom from './Tom.jsx'
 import Context from "./Context.jsx"
@@ -12,6 +13,7 @@ import Effect from './Effect.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Application></Application>
     <Event></Event>
     <Tom></Tom>
     <Context></Context>
