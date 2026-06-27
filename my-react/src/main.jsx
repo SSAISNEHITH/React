@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'   
+import reactteam from './reactteam.jsx'
 import Application from './Application.jsx'
 import Event from './Event.jsx' 
 import Tom from './Tom.jsx'

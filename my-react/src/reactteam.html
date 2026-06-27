@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Fullstack Training Invitation</title>
+    <style> 
+        /* Animated Multi-Color Gradient Background */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism Card Style */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            opacity: 0; /* Hidden by default for JS animation */
+            transform: translateY(30px); /* Pushed down for JS animation */
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .invitation-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typography */
+        h1.institute {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2.welcome {
+            color: #e74c3c;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p.details, p.message {
+            color: #34495e;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .datetime-highlight {
+            font-weight: bold;
+            color: #2980b9;
+            background: #ecf0f1;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #bdc3c7;
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+
+        .signature {
+            color: #8e44ad;
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card" id="invitationCard">
+        <h1 class="institute">Mother Theresa Institute of Engineering and Technology</h1>
+        <h2 class="welcome">Welcome to the Java Fullstack Training Session!</h2>
+        
+        <p class="details">
+            Join us on this momentous occasion:<br>
+            <span class="datetime-highlight" id="dynamicDateTime">Loading date and time...</span>
+        </p>
+        
+        <p class="message">
+            A collaborative environment where you can enjoy coding and updating as a team. Let's build the future together!
+        </p>
+
+        <div class="footer">
+            Best Regards,<br>
+            <div class="signature">ssaisnehith</div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Code to handle logic and animations
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Display Current Date and Time
+            const dateTimeElement = document.getElementById('dynamicDateTime');
+            
+            function updateTime() {
+                const now = new Date();
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric', 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    second: '2-digit' 
+                };
+                dateTimeElement.textContent = now.toLocaleDateString('en-US', options);
+            }
+
+            // Initialize time immediately, then update every second
+            updateTime();
+            setInterval(updateTime, 1000);
+
+            // 2. Trigger Smooth Entrance Animation
+            const card = document.getElementById('invitationCard');
+            
+            // Small delay for dramatic effect
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>
